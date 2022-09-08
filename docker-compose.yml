@@ -5,8 +5,8 @@ services:
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_USER=bn_matomo
-      - MARIADB_DATABASE=bitnami_matomo
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
       # Flag necessary for the database max allowed packet check
       # https://matomo.org/faq/troubleshooting/faq_183/
       - MARIADB_EXTRA_FLAGS=--max_allowed_packet=64MB
@@ -18,11 +18,11 @@ services:
       - "8082:80"
       - "8443:443"
     environment:
-      - MATOMO_PASSWORD=26l7JFrQuK#g
-      - MATOMO_DATABASE_HOST=mariadb
-      - MATOMO_DATABASE_PORT_NUMBER=3306
-      - MATOMO_DATABASE_USER=bn_matomo
-      - MATOMO_DATABASE_NAME=bitnami_matomo
+      - MATOMO_PASSWORD=${MATOMO_PASSWORD}
+      - MATOMO_DATABASE_HOST=${MATOMO_DATABASE_HOST}
+      - MATOMO_DATABASE_PORT_NUMBER=${MATOMO_DATABASE_PORT_NUMBER}
+      - MATOMO_DATABASE_USER=${MATOMO_DATABASE_USER}
+      - MATOMO_DATABASE_NAME=${MATOMO_DATABASE_NAME}
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
       - MATOMO_PROXY_CLIENT_HEADER=HTTP_X_FORWARDED_FOR
